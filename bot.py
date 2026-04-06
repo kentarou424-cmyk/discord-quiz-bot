@@ -5,8 +5,8 @@ from datetime import datetime
 import pytz
 
 # ===== 設定 =====
-DISCORD_TOKEN = "ここにDiscordのBotトークンを貼り付ける"
-ANTHROPIC_API_KEY = "ここにAnthropicのAPIキーを貼り付ける"
+DISCORD_TOKEN = "MTQ5MDY0NjE1OTQ0ODg3MTAxMw.GYveyZ.3NmbJfhKB0NvRzJFOuCmM8q1bo0ytEULzcQLj4"
+ANTHROPIC_API_KEY = "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"
 CHANNEL_ID = 1490180329347219657
 
 # 科目ローテーション
