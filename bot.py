@@ -6,8 +6,8 @@ import pytz
 from discord.ext import tasks
 
 # ===== 設定 =====
-DISCORD_TOKEN = os.environ["MTQ5MDY0NjE1OTQ0ODg3MTAxMw.GYveyZ.3NmbJfhKB0NvRzJFOuCmM8q1bo0ytEULzcQLj4"]
-ANTHROPIC_API_KEY = os.environ["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"]
+DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
+ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
 CHANNEL_ID = 1490180329347219657
 
 SUBJECTS = ["健康保険法", "労働基準法", "労働安全衛生法"]
