@@ -4,6 +4,8 @@ import os
 from datetime import datetime
 import pytz
 from discord.ext import tasks
+from http.server import HTTPServer, BaseHTTPRequestHandler
+import threading
 
 # ===== 設定 =====
 DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
@@ -21,6 +23,19 @@ client = discord.Client(intents=intents)
 
 today_questions = None
 today_answers = None
+
+# ===== HTTPサーバー（Render用） =====
+class HealthHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"OK")
+    def log_message(self, format, *args):
+        pass
+
+def run_server():
+    server = HTTPServer(("0.0.0.0", 10000), HealthHandler)
+    server.serve_forever()
 
 def get_today_subject():
     day = datetime.now(JST).weekday()
@@ -131,5 +146,10 @@ async def quiz_loop():
     if now.hour == 7 and now.minute == 55 and not quiz_loop.sent_answer:
         await send_answers()
         quiz_loop.sent_answer = True
+
+# HTTPサーバーをバックグラウンドで起動
+t = threading.Thread(target=run_server)
+t.daemon = True
+t.start()
 
 client.run(DISCORD_TOKEN)
