@@ -146,7 +146,7 @@ async def quiz_loop():
     if now.hour == 7 and now.minute == 45 and not quiz_loop.sent_question:
         await send_questions()
         quiz_loop.sent_question = True
-    if now.hour == 7 and now.minute == 55 and not quiz_loop.sent_answer:
+    if now.hour == 7 and now.minute == 50 and not quiz_loop.sent_answer:
         await send_answers()
         quiz_loop.sent_answer = True
 
