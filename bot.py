@@ -84,7 +84,7 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-   if message.content == "!テスト":
+    if message.content == "!テスト":
         global today_questions, today_answers
         today_questions = None
         today_answers = None
