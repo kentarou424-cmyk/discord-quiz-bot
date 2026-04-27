@@ -12,7 +12,7 @@ DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
 ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
 CHANNEL_ID = 1490180329347219657
 
-SUBJECTS = ["健康保険法", "労働基準法", "雇用保険法", "労働安全衛生法"]
+SUBJECTS = ["健康保険法", "労働基準法", "雇用保険法", "雇用保険法", "労働保険の保険料の徴収等に関する法律", "厚生年金保険法", "国民年金法", "労働保険の保険料の徴収等に関する法律", "社会保険に関する一般常識", "労働安全衛生法"]
 JST = pytz.timezone("Asia/Tokyo")
 
 claude = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
